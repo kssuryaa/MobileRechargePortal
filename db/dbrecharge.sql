@@ -1,20 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 18, 2016 at 05:03 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 27, 2019 at 01:01 PM
+-- Server version: 5.7.19
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `dbrecharge`
@@ -23,30 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dthoffrs`
---
-
-CREATE TABLE IF NOT EXISTS `dthoffrs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `rchamt` int(11) NOT NULL,
-  `valadity` varchar(50) NOT NULL,
-  `operator` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `dthoffrs`
---
-
-INSERT INTO `dthoffrs` (`id`, `rchamt`, `valadity`, `operator`) VALUES
-(1, 200, '30 days', 'Airtel Digital TV');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `offrs`
 --
 
+DROP TABLE IF EXISTS `offrs`;
 CREATE TABLE IF NOT EXISTS `offrs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rchamt` int(11) NOT NULL,
@@ -54,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `offrs` (
   `valadity` varchar(50) NOT NULL,
   `operator` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `offrs`
@@ -66,60 +48,10 @@ INSERT INTO `offrs` (`id`, `rchamt`, `tlktime`, `valadity`, `operator`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbbank`
---
-
-CREATE TABLE IF NOT EXISTS `tbbank` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `unam` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `bname` varchar(50) NOT NULL,
-  `usrnam` varchar(50) NOT NULL,
-  `pass` varchar(50) NOT NULL,
-  `transpass` varchar(50) NOT NULL,
-  `accnum` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
-
---
--- Dumping data for table `tbbank`
---
-
-INSERT INTO `tbbank` (`id`, `unam`, `name`, `bname`, `usrnam`, `pass`, `transpass`, `accnum`) VALUES
-(3, 'anjaan', 'Anjaan', 'Uco Bank', 'anjaan', 'anjaan123', 'anjaan12', 56984563),
-(8, 'amit1', 'Amit', 'Indian Bank', 'amit123', 'amit234', '234amit', 21456986),
-(9, 'amit1', 'Amit Kumar', 'SBI', 'amit234', '123amit', 'am123it', 65896324),
-(10, 'amit1', 'rohit', 'Uco Bank', 'rohit', 'rohit123', '123rohit', 23654789);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbbanknm`
---
-
-CREATE TABLE IF NOT EXISTS `tbbanknm` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `bname` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `tbbanknm`
---
-
-INSERT INTO `tbbanknm` (`id`, `bname`) VALUES
-(1, 'Uco Bank'),
-(2, 'Indian Bank'),
-(3, 'SBI'),
-(4, 'ICICI Bank'),
-(5, 'Punjab National Bank');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbcard`
 --
 
+DROP TABLE IF EXISTS `tbcard`;
 CREATE TABLE IF NOT EXISTS `tbcard` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -128,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `tbcard` (
   `cvv` int(11) NOT NULL,
   `txnpass` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbcard`
@@ -142,94 +74,15 @@ INSERT INTO `tbcard` (`id`, `name`, `ccnum`, `expdate`, `cvv`, `txnpass`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbcomplaints`
---
-
-CREATE TABLE IF NOT EXISTS `tbcomplaints` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cmpnum` int(11) NOT NULL,
-  `usrnam` varchar(50) NOT NULL,
-  `usrmnum` varchar(10) NOT NULL,
-  `complaint` varchar(100) NOT NULL,
-  `usreml` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `tbcomplaints`
---
-
-INSERT INTO `tbcomplaints` (`id`, `cmpnum`, `usrnam`, `usrmnum`, `complaint`, `usreml`) VALUES
-(3, 98590087, 'Amit', '8699559744', 'not working', 'aindoria@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbdthoprtr`
---
-
-CREATE TABLE IF NOT EXISTS `tbdthoprtr` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `oprtr` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `tbdthoprtr`
---
-
-INSERT INTO `tbdthoprtr` (`id`, `oprtr`) VALUES
-(1, 'Airtel Digital TV'),
-(2, 'TATA SKY'),
-(3, 'DISH TV');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbdthrc`
---
-
-CREATE TABLE IF NOT EXISTS `tbdthrc` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `txnnum` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `dthid` varchar(10) NOT NULL,
-  `oprtr` varchar(50) NOT NULL,
-  `amt` int(11) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
-
---
--- Dumping data for table `tbdthrc`
---
-
-INSERT INTO `tbdthrc` (`id`, `txnnum`, `name`, `dthid`, `oprtr`, `amt`, `status`) VALUES
-(7, 29284667, 'amit1', '300551465', 'Airtel Digital TV', 200, 'success'),
-(11, 53781127, 'amit1', '3005514659', 'Airtel Digital TV', 200, 'success'),
-(14, 99942016, 'amit1', '3005514659', 'TATA SKY', 200, 'success'),
-(15, 73541259, 'amit1', '3005514659', 'Airtel Digital TV', 200, 'success'),
-(16, 25546264, 'amit1', '2564896585', 'TATA SKY', 200, 'failed'),
-(23, 91921997, 'anjaan', '3005514659', 'Airtel Digital TV', 200, 'success'),
-(24, 78088378, 'anjaan', '3005514659', 'Airtel Digital TV', 200, 'success'),
-(26, 12091064, 'amit1', '3005514659', 'Airtel Digital TV', 500, 'success'),
-(27, 42303466, 'amit1', '3005514659', 'Airtel Digital TV', 500, 'success'),
-(28, 53530883, 'anjaan', '3005514659', 'Airtel Digital TV', 200, 'success'),
-(29, 89974975, 'anjaan', '3005514659', 'Airtel Digital TV', 200, 'success'),
-(30, 75308227, 'amit1', '3005514659', 'Airtel Digital TV', 200, 'success'),
-(31, 2194213, 'amit1', '3005514659', 'Airtel Digital TV', 200, 'success');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tboprtr`
 --
 
+DROP TABLE IF EXISTS `tboprtr`;
 CREATE TABLE IF NOT EXISTS `tboprtr` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `opratornam` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tboprtr`
@@ -238,7 +91,11 @@ CREATE TABLE IF NOT EXISTS `tboprtr` (
 INSERT INTO `tboprtr` (`id`, `opratornam`) VALUES
 (1, 'Airtel'),
 (2, 'idea'),
-(3, 'Tata Docomo');
+(3, 'Tata Docomo'),
+(4, 'Jio'),
+(5, 'singtel'),
+(6, 'Uninor'),
+(7, 'qwerty');
 
 -- --------------------------------------------------------
 
@@ -246,6 +103,7 @@ INSERT INTO `tboprtr` (`id`, `opratornam`) VALUES
 -- Table structure for table `tbrc`
 --
 
+DROP TABLE IF EXISTS `tbrc`;
 CREATE TABLE IF NOT EXISTS `tbrc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `txnnum` int(11) NOT NULL,
@@ -256,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `tbrc` (
   `amt` int(11) NOT NULL,
   `status` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbrc`
@@ -286,6 +144,7 @@ INSERT INTO `tbrc` (`id`, `txnnum`, `name`, `mnum`, `type`, `oprtr`, `amt`, `sta
 -- Table structure for table `tbsimdetail`
 --
 
+DROP TABLE IF EXISTS `tbsimdetail`;
 CREATE TABLE IF NOT EXISTS `tbsimdetail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nam` varchar(50) NOT NULL,
@@ -293,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `tbsimdetail` (
   `usrreg` varchar(50) NOT NULL,
   `mopratr` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -301,6 +160,7 @@ CREATE TABLE IF NOT EXISTS `tbsimdetail` (
 -- Table structure for table `tbusr`
 --
 
+DROP TABLE IF EXISTS `tbusr`;
 CREATE TABLE IF NOT EXISTS `tbusr` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -309,17 +169,29 @@ CREATE TABLE IF NOT EXISTS `tbusr` (
   `usrrol` char(1) NOT NULL,
   `cntnum` varchar(10) NOT NULL,
   `act` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbusr`
 --
 
-INSERT INTO `tbusr` (`id`, `name`, `usernam`, `password`, `usrrol`, `cntnum`, `act`) VALUES
-(1, 'Admin', 'admin', 'admin123', 'A', '2345698752', 1),
-(2, 'Anjaan', 'anjaan', '123456', 'S', '5689452365', 1),
-(3, 'Amit Indoria', 'amit1', 'amit123', 'S', '8699559447', 1);
+INSERT INTO `tbusr` (`id`, `name`, `usernam`, `password`, `usrrol`, `cntnum`, `act`, `email`) VALUES
+(1, 'Admin', 'admin', 'admin123', 'A', '2345698752', 1, 'akashmrk@gmail.com'),
+(4, 'Krishnan', 'krishnan', 'krishnan', 'S', '8754744312', 1, 'radhakrishnan.m2016@vitstudent.ac.in'),
+(8, 'radhakrishnan', 'rk16', 'krishnan', 'S', '9876543210', 1, 'akashmrk@gmail.com'),
+(9, 'av', 'avudai', 'avudai', 'S', '8754469434', 1, 'm.avudai@gmail.com'),
+(10, 'abcd', 'qwerty', 'qwerty', 'S', '8754744312', 1, 'akashmrk@gmail.com'),
+(11, 'qwerty', 'qwertyu', 'qwerty', 'S', '8754744312', 1, 'akashmrk@gmail.com'),
+(12, 'eeshitha', 'eeshitha', 'eeshitha', 'S', '8754744312', 1, 'eespra110998@gmail.com'),
+(13, 'caroline', 'caro', 'caroline', 'S', '8754744312', 1, 'eespra110998@gmail.com'),
+(14, 'surya', 'surya', 'suryaks', 'S', '8754744312', 1, 'selvaraj.suryaa@gmail.com'),
+(15, 'RadhaKrishnan', 'akashmrk', 'akashmrk', 'S', '8754469434', 1, 'akashmrk@gmail.com'),
+(16, 'Vikram', 'vikram', 'vikram', 'S', '9876543210', 1, 'vickyponting1999@gmail.com'),
+(17, 'Vikramsuresh', 'vikram1', 'vikram1', 'S', '9876543210', 1, 's.vikram2016@vitstudent.ac.in'),
+(18, 'Krish', 'krish', 'krishnan', 'S', '8754744312', 1, 'akashmrk@gmail.com');
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

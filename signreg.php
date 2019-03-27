@@ -127,13 +127,13 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'akashmrk@gmail.com';                 // SMTP username
-    $mail->Password = 'Rocky@#mrk';                           // SMTP password
+    $mail->Username = 'ur_username@abc.com';                 // SMTP username
+    $mail->Password = 'ur_password';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('akashmrk@gmail.com', 'Recharge Portal');
+    $mail->setFrom('', 'Recharge Portal');
    	$mail->addAddress($email, $name);     // Add a recipient
     /*
     $mail->addAddress('ellen@example.com');               // Name is optional
