@@ -1,0 +1,5 @@
+# Mobile Recharge Portal
+
+## Project Description
+
+The project aims at providing an easy and reliable platform to recharge mobile of any telecommunication company through online. The registered users of the system can create their account, and recharge their prepaid mobile phones from anywhere at any time. The proposed project for recharging mobiles developed to automate the mobile recharging process. It roots out the manual system of recharge and introduces a new and online recharge processes. Here we also introduce the concept of admins and users. It provides system administrator to approve the recharge status, deduct the payment. The online mobile recharge system is beneficial to both the admins and users. Using the online application, the admin can add new operators, tariff plans, offers and update or modify the existing tariff plans and the user can access his own data and recharge it anywhere and anytime. Online Mobile Recharge Portal is a web-based application to recharge mobile phones. This application provides easy access to online recharge portal.
