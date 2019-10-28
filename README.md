@@ -19,3 +19,11 @@ ADMIN LOGIN:
 ![ss6](https://user-images.githubusercontent.com/44207452/67656505-fc412e80-f979-11e9-8803-5871ba166ca4.jpg)
 ![ss7](https://user-images.githubusercontent.com/44207452/67656506-fcd9c500-f979-11e9-9e2f-78829b9216d3.jpg)
 ![ss8](https://user-images.githubusercontent.com/44207452/67656507-fcd9c500-f979-11e9-9f62-875a77d34d12.jpg)
+
+### TO DO
+
+- [ ] add contributors
+- [x] build basic landing page
+- [x] build required functionalities
+- [ ] build an Android App
+- [ ] Stripe integration for payments
