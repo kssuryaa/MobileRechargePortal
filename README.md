@@ -6,11 +6,16 @@ The project aims at providing an easy and reliable platform to recharge mobile o
 
 ## Screenshots
 
+USER LOGIN :
+
 ![ss1](https://user-images.githubusercontent.com/44207452/67656508-fcd9c500-f979-11e9-9a84-9fd69d283b88.jpg)
 ![ss2](https://user-images.githubusercontent.com/44207452/67656500-fba89800-f979-11e9-819d-d9524caa421b.jpg)
 ![ss3](https://user-images.githubusercontent.com/44207452/67656501-fc412e80-f979-11e9-9622-b4b7a4de37a0.jpg)
 ![ss4](https://user-images.githubusercontent.com/44207452/67656502-fc412e80-f979-11e9-8284-37144bcf21a7.jpg)
 ![ss5](https://user-images.githubusercontent.com/44207452/67656503-fc412e80-f979-11e9-9578-7caa92baa61a.jpg)
+
+ADMIN LOGIN:
+
 ![ss6](https://user-images.githubusercontent.com/44207452/67656505-fc412e80-f979-11e9-8803-5871ba166ca4.jpg)
 ![ss7](https://user-images.githubusercontent.com/44207452/67656506-fcd9c500-f979-11e9-9e2f-78829b9216d3.jpg)
 ![ss8](https://user-images.githubusercontent.com/44207452/67656507-fcd9c500-f979-11e9-9f62-875a77d34d12.jpg)
